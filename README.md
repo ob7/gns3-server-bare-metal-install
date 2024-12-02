@@ -3,7 +3,9 @@ This repository provides a guide and script for installing the GNS3 server and U
 ## Installation Steps
 
 ### From Source
-The following steps install the GNS3 server and Ubridge from source and set them up as a service. It is tested on Ubuntu 20.04. It installs gns3-server and ubridge from git source rather than apt repository.
+The following steps install the GNS3 server and Ubridge from source and set them up as a service. 
+It is tested on Ubuntu 20.04. 
+It installs gns3-server and ubridge from git source rather than apt repository.
 
 ### GNS3 Server Installation
 
