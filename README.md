@@ -6,68 +6,76 @@ This repository provides a guide and script for installing the GNS3 server and U
 
 ## Installation Steps
 
-``` From Source
+### From Source
 The following steps install the GNS3 server and Ubridge from source and set them up as a service.
 
-``` GNS3 Server Installation
+### GNS3 Server Installation
 
-```# Add the `gns3` User
+#### Add the `gns3` User
 
 ```
 sudo adduser gns3  # Add the gns3 user that the GNS3 server will run as  
 su gns3            # Switch to the gns3 user  
 cd /home/gns3      # Change to the gns3 user home directory  
+```
 
-```# Install OS Dependencies
+#### Install OS Dependencies
 
 ```
 sudo apt-get install python3-setuptools python3-pip qemu-kvm qemu-system-x86 mtools git  
+```
 
-```# Clone the GNS3 Server Repository
+#### Clone the GNS3 Server Repository
 
 ```
 git clone https://github.com/GNS3/gns3-server  
 cd gns3-server  
+```
 
-```# Install Python Dependencies
+#### Install Python Dependencies
 
 ```
 python3 -m pip install -r requirements.txt  
+```
 
-```# Install the GNS3 Server
+#### Install the GNS3 Server
 
 ```
 python3 -m pip install .  
+```
 
 This installs the `gns3server` binary in `/home/gns3/.local/bin`.
 
-```# Add the `gns3` User to the KVM Group
+#### Add the `gns3` User to the KVM Group
 
 ```
 sudo usermod -aG kvm gns3  
+```
 
 ---
 
-``` Ubridge Installation
+### Ubridge Installation
 
-```# Install OS Dependencies
+#### Install OS Dependencies
 
 ```
 sudo apt install -y libpcap-dev  
+```
 
-```# Clone and Build Ubridge
+#### Clone and Build Ubridge
 
 ```
 git clone https://github.com/GNS3/ubridge.git  
 cd ubridge  
 make  
 sudo make install  
+```
 
 ---
 
-``` Configure GNS3 Server as a Service
+### Configure GNS3 Server as a Service
 
-```# Create the Service File
+#### Create the Service File
 
 ```
 sudo bash -c 'cat > /usr/lib/systemd/system/gns3.service' << EOF
@@ -84,22 +92,28 @@ ExecStart=/home/gns3/.local/bin/gns3server
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
 ---
 
-``` Start and Check the Service
+### Start and Check the Service
 
 ```
 sudo systemctl daemon-reload  
 sudo systemctl start gns3.service  
+```
 
 To enable it on boot:
 ```
 sudo systemctl enable gns3.service  
+```
 
 To check logs:
 ```
 journalctl -u gns3.service -f  
+```
+
+---
 
 ## Full Script: `gns3-server-install.sh`
 
@@ -159,3 +173,4 @@ to see logs, run:
 journalctl -u gns3.service -f
 "
 ```
+
