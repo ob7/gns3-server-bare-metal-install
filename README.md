@@ -160,7 +160,7 @@ ExecStart=/home/gns3/.local/bin/gns3server
 WantedBy=multi-user.target
 EOF
 
-# Reload systemd, start service, and enable it on boot
+# Start service, and enable it on boot
 sudo systemctl start gns3.service
 sudo systemctl enable gns3.service
 ```
