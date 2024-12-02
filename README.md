@@ -99,7 +99,6 @@ EOF
 ### Start and Check the Service
 
 ```
-sudo systemctl daemon-reload  
 sudo systemctl start gns3.service  
 ```
 
