@@ -1,8 +1,4 @@
-# gns3-server-bare-metal-install
-
 This repository provides a guide and script for installing the GNS3 server and Ubridge on a bare metal server. It ensures proper setup of dependencies, installation from source, and configuration for running the GNS3 server as a service.
-
----
 
 ## Installation Steps
 
