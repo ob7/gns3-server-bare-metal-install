@@ -163,13 +163,7 @@ EOF
 # Reload systemd, start service, and enable it on boot
 sudo systemctl start gns3.service
 sudo systemctl enable gns3.service
-
-echo -e "
-start service with:
-systemctl start gns3.service
-
+```
 to see logs, run:
 journalctl -u gns3.service -f
-"
-```
 

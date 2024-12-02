@@ -53,6 +53,9 @@ echo -e "
 start service with
 systemctl start gns3.service
 
+autostart at boot with
+systemctl enable gns3.service
+
 to see logs run:
 journalctrl -u gns3.service -f
 "
