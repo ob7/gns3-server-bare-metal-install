@@ -162,8 +162,3 @@ EOF
 sudo systemctl start gns3.service
 sudo systemctl enable gns3.service
 ```
-to see logs, run:
-```
-journalctl -u gns3.service -f
-```
-
