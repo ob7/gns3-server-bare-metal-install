@@ -160,7 +160,6 @@ WantedBy=multi-user.target
 EOF
 
 # Reload systemd, start service, and enable it on boot
-sudo systemctl daemon-reload
 sudo systemctl start gns3.service
 sudo systemctl enable gns3.service
 
