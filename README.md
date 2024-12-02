@@ -65,6 +65,7 @@ sudo apt install -y libpcap-dev
 #### Clone and Build Ubridge
 
 ```
+cd ~
 git clone https://github.com/GNS3/ubridge.git  
 cd ubridge  
 make  
